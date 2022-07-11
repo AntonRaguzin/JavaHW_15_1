@@ -3,6 +3,7 @@ package ru.netology.main;
 import ru.netology.repository.TicketsRepository;
 
 import java.util.Arrays;
+import java.util.Comparator;
 
 public class TicketManager {
 
@@ -40,6 +41,25 @@ public class TicketManager {
             }
         }
         Arrays.sort(foundTickets);
+        return foundTickets;
+    }
+
+    public Ticket[] findByAirportSortByTime(String from, String to, Comparator<Ticket> comparator) {
+
+        Ticket[] foundTickets = new Ticket[0];
+
+        for (Ticket ticket : findAll()) {
+//            if (ticket.getFrom() == from && ticket.getTo() == to) {
+              if (ticket.getFrom().equals(from) && ticket.getTo().equals(to)) {
+                Ticket[] tmp = new Ticket[foundTickets.length + 1];
+                for (int i = 0; i < foundTickets.length; i++) {
+                    tmp[i] = foundTickets[i];
+                }
+                tmp[tmp.length - 1] = ticket;
+                foundTickets = tmp;
+            }
+        }
+        Arrays.sort(foundTickets, comparator);
         return foundTickets;
     }
 
