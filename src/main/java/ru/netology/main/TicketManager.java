@@ -24,7 +24,7 @@ public class TicketManager {
         return repo.findAll();
     }
 
-    public Ticket[] FindByAirport(String from, String to) {
+    public Ticket[] findByAirport(String from, String to) {
 
         Ticket[] foundTickets = new Ticket[0];
 
