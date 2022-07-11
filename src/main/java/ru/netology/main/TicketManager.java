@@ -29,7 +29,8 @@ public class TicketManager {
         Ticket[] foundTickets = new Ticket[0];
 
         for (Ticket ticket : findAll()) {
-            if (ticket.getFrom() == from && ticket.getTo() == to) {
+//            if (ticket.getFrom() == from && ticket.getTo() == to) {
+              if (ticket.getFrom().equals(from) && ticket.getTo().equals(to)){
                 Ticket[] tmp = new Ticket[foundTickets.length + 1];
                 for (int i = 0; i < foundTickets.length; i++) {
                     tmp[i] = foundTickets[i];
