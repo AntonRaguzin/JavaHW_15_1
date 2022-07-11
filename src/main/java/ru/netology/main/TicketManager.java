@@ -25,11 +25,6 @@ public class TicketManager {
         return repo.findAll();
     }
 
-
-    FlightTimeComparator flightTimeComparator = new FlightTimeComparator();
-
-
-
     public Ticket[] FindByAirport(String from, String to) {
 
         Ticket[] foundTickets = new Ticket[0];
@@ -48,7 +43,7 @@ public class TicketManager {
         return foundTickets;
     }
 
-    public Ticket[] FindByAirportSortByTime (String from, String to, Comparator<Ticket>comparator) {
+    public Ticket[] FindByAirportSortByTime(String from, String to, Comparator<Ticket> comparator) {
 
         Ticket[] foundTickets = new Ticket[0];
 
@@ -62,7 +57,7 @@ public class TicketManager {
                 foundTickets = tmp;
             }
         }
-        Arrays.sort(foundTickets,comparator);
+        Arrays.sort(foundTickets, comparator);
         return foundTickets;
     }
 
