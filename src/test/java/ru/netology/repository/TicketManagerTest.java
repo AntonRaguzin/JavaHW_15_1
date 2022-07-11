@@ -79,7 +79,7 @@ public class TicketManagerTest {
         manager.add(t5);
 
         Ticket[] expected = {t4, t1};
-        Ticket[] actual = manager.FindByAirport("DME", "RGK");
+        Ticket[] actual = manager.findByAirport("DME", "RGK");
 
         assertArrayEquals(expected, actual);
     }
@@ -94,7 +94,7 @@ public class TicketManagerTest {
         manager.add(t5);
 
         Ticket[] expected = {};
-        Ticket[] actual = manager.FindByAirport("SVO", "KZN");
+        Ticket[] actual = manager.findByAirport("SVO", "KZN");
 
         assertArrayEquals(expected, actual);
     }
@@ -109,7 +109,7 @@ public class TicketManagerTest {
         manager.add(t5);
 
         Ticket[] expected = {};
-        Ticket[] actual = manager.FindByAirport(null, "KZN");
+        Ticket[] actual = manager.findByAirport(null, "KZN");
 
         assertArrayEquals(expected, actual);
     }
@@ -124,7 +124,7 @@ public class TicketManagerTest {
         manager.add(t5);
 
         Ticket[] expected = {t1, t4};
-        Ticket[] actual = manager.FindByAirportSortByTime("DME", "RGK", flightTimeComparator);
+        Ticket[] actual = manager.findByAirportSortByTime("DME", "RGK", flightTimeComparator);
 
         assertArrayEquals(expected, actual);
     }
@@ -140,7 +140,7 @@ public class TicketManagerTest {
         manager.add(t6);
 
         Ticket[] expected = {t1, t6, t4};
-        Ticket[] actual = manager.FindByAirportSortByTime("DME", "RGK", flightTimeComparator);
+        Ticket[] actual = manager.findByAirportSortByTime("DME", "RGK", flightTimeComparator);
 
         assertArrayEquals(expected, actual);
     }
